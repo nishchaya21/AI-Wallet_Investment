@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Investment Recommendations</h1>
+        <form id="investment-form">
+            <label for="amount">Amount to Invest:</label>
+            <input type="number" id="amount" required><br>
+            
+            <label for="risk_tolerance">Risk Tolerance:</label>
+            <select id="risk_tolerance" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select><br>
+            
+            <label for="duration">Investment Duration (in years):</label>
+            <input type="number" id="duration" required><br>
+            
+            <label for="target_amount">Target Amount (optional):</label>
+            <input type="number" id="target_amount"><br>
+            
+            <button type="submit">Get Recommendations</button>
+        </form>
+        
+        <h2>Recommended Investments:</h2>
+        <ul id="recommendations"></ul>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
